@@ -10,16 +10,23 @@ import org.springframework.stereotype.Component;
 public class DataBase {
 	
 	@Pointcut("execution(public * com.spring.dao.*.*(..))") 
-	public void myPointCut() {
-		
-	}
+	public void myPointCut() {}
 	
-	@Before("myPointCut()") 
+	@Pointcut("execution(public * com.spring.dao.*.get*(..))") 
+	public void myGetterCut() {}
+	
+	@Pointcut("execution(public * com.spring.dao.*.set*(..))") 
+	public void mySetterCut() {}
+	
+	@Pointcut("myPointCut() && !(mySetterCut() || myGetterCut())")
+	public void Cut() {}
+	
+	@Before("Cut()") 
 	public void Connection() {
 		System.out.println("Connected !!");
 	}
 	
-	@Before("myPointCut()") 
+	@Before("Cut()") 
 	public void login() {
 		System.out.println("login success !!!");
 	}

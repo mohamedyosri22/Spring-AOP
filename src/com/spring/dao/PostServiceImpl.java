@@ -6,6 +6,7 @@ import com.spring.model.User;
 
 @Component
 public class PostServiceImpl implements PostService {
+	private String name;
 
 	@Override
 	public String allPosts(User user,int result) {
@@ -22,6 +23,19 @@ public class PostServiceImpl implements PostService {
 		// TODO Auto-generated method stub
 		System.out.println("start service");
 		
+	}
+
+	@Override
+	public void setName() {
+		// TODO Auto-generated method stub
+		System.out.println("this is setName");
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		System.out.println("this is getName");
+		return null;
 	}
 
 }
