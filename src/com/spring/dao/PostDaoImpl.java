@@ -17,4 +17,11 @@ public class PostDaoImpl implements PostDao {
 	public String allLikes(User user,int result) {
 		return "My Likes ==> PostDao";
 	}
+
+	@Override
+	public void funDao() {
+		// TODO Auto-generated method stub
+		System.out.println("fun dao");
+		
+	}
 }

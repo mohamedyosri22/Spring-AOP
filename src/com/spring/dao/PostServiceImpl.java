@@ -17,4 +17,11 @@ public class PostServiceImpl implements PostService {
 		return "My Likes ==> PostService";
 	}
 
+	@Override
+	public void startService() {
+		// TODO Auto-generated method stub
+		System.out.println("start service");
+		
+	}
+
 }

@@ -16,11 +16,14 @@ public class MainApp {
 		int result = 0;
 		po.allPosts(user);
 		System.out.println(po.allLikes(user,result));
+		po.funDao();
 		System.out.println("=============================");
 		
 		PostService ps = an.getBean("postServiceImpl",PostService.class);
 		System.out.println(ps.allPosts(user,result));
 		System.out.println(ps.allLikes(user));
+		ps.startService();
+		
 	}
 
 }
