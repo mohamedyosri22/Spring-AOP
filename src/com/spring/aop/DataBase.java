@@ -18,7 +18,7 @@ public class DataBase {
 	@Pointcut("execution(public * com.spring.dao.*.set*(..))") 
 	public void mySetterCut() {}
 	
-	@Pointcut("myPointCut() && !(mySetterCut() || myGetterCut())")
+	@Pointcut("myPointCut() && !(mySetterCut() || myGetterCut()) ")
 	public void Cut() {}
 	
 	@Before("Cut()") 
