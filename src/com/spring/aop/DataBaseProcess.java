@@ -18,5 +18,10 @@ public class DataBaseProcess {
 	public void commit() {
 		System.out.println("Commit !!");
 	}
+	
+	@After("execution(public String getStudent())")
+	public void commit1() {
+		System.out.println("Commit 1 !!");
+	}
 
 }
